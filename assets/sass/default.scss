@@ -1,0 +1,27 @@
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+}
+body, div, article, aside, header, main, nav, ul, ol, button, figure, picture, section, li {
+    display: flex;
+}
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+}
+hr {
+    &.divider {
+        background-color: var(--gray-3);
+        height: 1px;
+        width: calc(100% - 2em);
+        margin: 3em 0;
+        border: none;
+        align-self: center;
+    }
+}
