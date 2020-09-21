@@ -6,7 +6,7 @@
     font-style: normal;
     font-weight: 400;
 }
-body, div, article, aside, header, main, nav, ul, ol, button, figure, picture, section, li {
+body, div, article, aside, header, main, footer, nav, ul, ol, button, figure, picture, section, li,  {
     display: flex;
 }
 body {
@@ -14,14 +14,25 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--bg-color);
+    > main {
+        min-height: calc(100vh - 400px);
+    }
 }
 hr {
     &.divider {
         background-color: var(--gray-3);
         height: 1px;
-        width: calc(100% - 2em);
+        width: calc(100% - 2em); // Pega 100% da tela e remove a quantidade de 2 letras 'm'
         margin: 3em 0;
         border: none;
         align-self: center;
     }
 }
+@media (min-width: 1200px) {
+    body {
+        > main {
+            min-height: calc(100vh - 341px);
+        }
+    }
+}
+
