@@ -31,15 +31,13 @@
         <section>
             <a href="index.html"><img src="assets/images/ferrari-logo.svg" alt="Logo Ferrari"/></a>
 
-            <form class="hide">
+            <form>
                 <h1>Autenticação</h1>
-
-                <hr />
+                 <hr />
 
                 <div class="field">
                     <input type="email" name="email" id="email"/>
                     <label for="email">E-mail</label>
-
 
                 </div>
                 <div class="actions">
@@ -48,8 +46,9 @@
                 </div>
 
 
-            </form id="login">
-            <form>
+           
+            </form>
+            <form id="Login" class="hide" >
                 <h1>Fazer Login</h1>
 
                 <hr />
@@ -62,13 +61,13 @@
                 </div>
                 <div class="field">
                     <input type="password" name="password" id="password"/>
-                    <label for="password">Senha</label>
+                    <label for="password">Digite sua Senha</label>
 
 
                 </div>
                 <div class="actions">
                     <div>
-                        <a href="auth.html#forget" class="link">Esqueceu sua senha</a>
+                        <a href="auth.html#forget" class="link">Esqueceu sua senha?</a>
 
                         <a href="auth.html" class="link">Este não é seu email?</a>
                    </div>
@@ -78,7 +77,7 @@
 
 
             </form>
-            <form id="register">
+            <form id="register" class="hide">
 
                 <h1>Criar a conta</h1>
 
@@ -86,7 +85,7 @@
 
                 <div class="field">
                     <input type="email" name="email" id="email-login" readonly value="henriquee.rodrigues@gmail.com"/>
-                    <label for="email">E-mail</label>
+                    <label for="email-login">E-mail</label>
 
 
                 </div>
@@ -97,19 +96,19 @@
 
                 </div>
                 <div class="field">
-                    <input type="date" name="birth_at" id="name"/>
+                    <input type="date" name="birth_at" id="birth_at"/>
                     <label for="birth_at">Data de nascimento</label>
 
 
                 </div>
                 <div class="field">
                     <input type="password" name="password" id="password-new"/>
-                    <label for="password-new">Crie senha uma senha</label>
+                    <label for="password-new">Crie  uma senha</label>
 
 
                 </div>
                 <div class="field">
-                    <input type="password" name="password-confirme" id="password-confirm"/>
+                    <input type="password" name="password-confirm" id="password-confirm"/>
                     <label for="password-confirm">Confirme sua senha</label>
 
 
@@ -117,17 +116,51 @@
                 
                 <div class="actions">
                     
-                        <a href="auth.html#forget" class="link">Já tem uma conta</a>
-
-                        
-                   
-                   
+                    <a href="auth.html#login" class="link">Já tem uma conta</a>
                     <button type="submit">Cadastrar</button>
                 </div>
 
 
             </form>
+            <form id="forget" class="hide">
 
+                <h1>Esqueci a senha</h1>
+                <hr />
+
+                <div class="loading-wrap">
+                    <div class="loading">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+
+                    </div>
+                    <p>Por favor, aguarde</p>
+
+                </div>
+                <div class="message">
+                    <img src="assets/images/check-circle.svg" alt="ok">
+                    <span>Verifique as instruções no seu e-mail</span>
+                </div>
+            </form>
+            <form id="reset" class="hide">
+                <h1>Redefinir Senha</h1>
+                 <hr />
+
+                <div class="field">
+                    <input type="password" name="redefinir" id="password-reset"/>
+                    <label for="password-reset">Redefinir Senha</label>
+
+                </div>
+                <div class="actions">
+                    <div></div>
+                    <button type="submit">Redefinir</button>
+                    
+                </div>
+
+
+           
+            </form>
             <p>2020 Hcode. All rigths reserved</p>
 
         </section>

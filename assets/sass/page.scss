@@ -8,7 +8,7 @@ header {
         h1, h2, h3, h4, h5, h6 {
             color: var(--green);
             margin: 0;
-            font-size: 32px;
+            font-size: 23px;
             font-weight: 600;
         }
         hr {
@@ -98,12 +98,27 @@ header {
     }
 }
 @media (min-width: 1200px) { 
+    header {
+        &.page-title {
+            h1, h2, h3, h4, h5, h6 {  
+                font-size: 30px;
+                
+            }
+            hr {
+                width: 68px;
+                border: none;
+                border-top: 4px solid var(--red);
+                margin: 10px 0;
+            }
+        }
+    }
+    
     .page {
         > header {
             justify-content: flex-start;
             padding-left: 185px;
             min-height: 160px;
-            h1{
+            h1, h2, h3, h4, h5, h6 {
                 font-size: 32px;
             }
         }

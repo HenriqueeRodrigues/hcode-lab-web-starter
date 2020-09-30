@@ -86,7 +86,7 @@
   font-weight: 400;
 }
 
-body, div, article, aside, header, main, footer, nav, ul, ol, button, figure, picture, section, li {
+body, div, article, aside, header, main, footer, nav, ul, ol, form, button, figure, picture, section, li {
   display: flex;
 }
 
@@ -112,6 +112,43 @@ hr.divider {
 @media (min-width: 1200px) {
   body > main {
     min-height: calc(100vh - 341px);
+  }
+}
+.loading-wrap {
+  align-items: center;
+  justify-content: center;
+}
+.loading-wrap .loading {
+  margin-right: 5px;
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+.loading-wrap .loading div {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: absolute;
+  border: 3px solid var(--green);
+  border-color: var(--green) transparent transparent transparent;
+  animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+.loading-wrap .loading div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.loading-wrap .loading div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.loading-wrap .loading div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 .toast {
@@ -267,7 +304,7 @@ header.page-title {
 header.page-title h1, header.page-title h2, header.page-title h3, header.page-title h4, header.page-title h5, header.page-title h6 {
   color: var(--green);
   margin: 0;
-  font-size: 32px;
+  font-size: 23px;
   font-weight: 600;
 }
 header.page-title hr {
@@ -457,12 +494,22 @@ header.page-title hr {
 }
 
 @media (min-width: 1200px) {
+  header.page-title h1, header.page-title h2, header.page-title h3, header.page-title h4, header.page-title h5, header.page-title h6 {
+    font-size: 30px;
+  }
+  header.page-title hr {
+    width: 68px;
+    border: none;
+    border-top: 4px solid var(--red);
+    margin: 10px 0;
+  }
+
   .page > header {
     justify-content: flex-start;
     padding-left: 185px;
     min-height: 160px;
   }
-  .page > header h1 {
+  .page > header h1, .page > header h2, .page > header h3, .page > header h4, .page > header h5, .page > header h6 {
     font-size: 32px;
   }
   .page footer.fixed {
@@ -615,7 +662,7 @@ header.page-title hr {
   height: 60px;
   background-color: var(--gray-5);
   position: relative;
-  z-index: 3;
+  z-index: 5;
 }
 #header .italy {
   width: 100%;
@@ -634,7 +681,7 @@ header.page-title hr {
   top: 15px;
   width: 72px;
   right: calc(50vw - 36px);
-  z-index: 5;
+  z-index: 7;
 }
 #header .menu {
   transition: right 0.5s ease-in-out;
@@ -645,7 +692,7 @@ header.page-title hr {
   position: fixed;
   right: -300px;
   top: 0;
-  z-index: 4;
+  z-index: 6;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -673,9 +720,11 @@ header.page-title hr {
 #header .menu nav ul {
   margin: 0;
   padding: 0;
-  margin-top: 249px;
+  margin-top: 169px;
   width: 100%;
   flex-direction: column;
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
 }
 #header .menu nav ul li {
   padding: 14px 0;
@@ -778,7 +827,7 @@ header.page-title hr {
   width: 100%;
   height: 100vh;
   background-color: var(--dark-1);
-  z-index: 4;
+  z-index: 5;
 }
 .open-menu #header .menu {
   right: 0;
@@ -1289,6 +1338,7 @@ header.page-title hr {
 }
 #auth > section {
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   position: relative;
   width: 100%;
@@ -1311,6 +1361,18 @@ header.page-title hr {
 #auth > section form.hide {
   display: none;
 }
+#auth > section form .message {
+  align-items: center;
+  justify-content: center;
+}
+#auth > section form .message img {
+  margin-right: 5px;
+}
+#auth > section form .message span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark-0);
+}
 #auth > section form h1 {
   text-align: center;
   color: var(--green);
@@ -1321,8 +1383,8 @@ header.page-title hr {
 #auth > section form hr {
   width: 68px;
   border: none;
-  border-top: 4px;
-  border-bottom: var(--space);
+  border-top: 4px solid var(--red);
+  margin-bottom: var(--space);
 }
 #auth > section form .actions {
   justify-content: space-between;
@@ -1351,7 +1413,7 @@ header.page-title hr {
   font-size: 16px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 500px) {
   #auth > section {
     width: 500px;
     height: initial;
@@ -1360,12 +1422,38 @@ header.page-title hr {
     top: 125px;
   }
   #auth > section form {
-    border: var(--gray--8) 1px solid;
+    border: var(--gray-8) 1px solid;
     border-radius: calc(2* var(--border-radius));
     width: 100%;
     padding: 50px;
-    padding-top: 100;
+    padding-top: 100px;
   }
+}
+#change-photo form {
+  align-items: center;
+  margin-top: var(--space);
+}
+#change-photo form img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+#change-photo form #file {
+  display: none;
+}
+#change-photo form .choose-photo {
+  margin: var(--space) 0;
+  min-width: 256px;
+}
+
+@media (min-width: 1200px) {
+  #change-photo form img {
+    width: 256px;
+    height: 256px;
+  }
+}
+#change-password form .page-title {
+  margin: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
