@@ -1,0 +1,45 @@
+
+header {
+    flex-direction: column;
+}
+
+section {
+    form {
+        .bold {
+            font-weight: bold;
+        }
+        .font {
+            font-weight: 8px;
+        }
+        
+    }
+    
+}
+footer {
+    height: 50px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space);
+    font-size: 18px;
+    color: var(--space);
+    text-align: right;
+    
+    .total {
+        font-weight: bold;
+        margin-left: var(--space);
+        text-align: right;
+    }
+
+
+    button {
+        @include button;
+        min-width: 50px;
+        width: 50px;
+        svg {
+            transform: rotate(0deg);
+            transition: transform .3s ease-in-out;
+        }
+    }
+    
+}
