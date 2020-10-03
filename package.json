@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch assets/sass/main.scss:assets/css/main.css"
+    "sass": "sass --watch assets/sass/main.scss:assets/css/main.css",
+    "build": "sass assats/sass/main.scss:assets/css/min.css --style=compressed"
   },
   "keywords": [],
   "author": "",

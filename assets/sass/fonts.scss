@@ -23,13 +23,14 @@
     font-style: normal;
     font-weight: Bold;
 }
-@font-face{
+
+@font-face {
     font-family: 'Nothing';
     src: local("Nothing You Could Do"), url("../fonts/NothingYouCouldDo-Regular.ttf") format("truetype");
     font-style: normal;
     font-weight: 300;
-    
 }
+
 @font-face{
     font-family: 'Teko';
     src: local("Teko"), url("../fonts/Teko-Regular.ttf") format("truetype");
